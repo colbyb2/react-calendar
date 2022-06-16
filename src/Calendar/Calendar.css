@@ -1,0 +1,105 @@
+/* Main Calendar Wrapper */
+
+:root {
+  --text: rgb(74, 74, 74);
+  --border: rgb(215, 215, 215);
+  --filler-bg: rgb(175, 175, 175);
+  --filler-fg: rgb(165, 165, 165);
+  --hover: rgb(224, 224, 224);
+  --selected-day: rgb(137, 142, 202);
+}
+
+.calendar {
+  background-color: white;
+  width: 80vw;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Calendar Header */
+.calendarHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15%;
+  width: 100%;
+  border-bottom: 1px solid var(--border);
+}
+
+.calendarTitle {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--text);
+}
+
+.calendarHeaderButton {
+  padding: 0 3%;
+  transition: 150ms all ease-in-out;
+}
+
+.calendarHeaderButton:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+/* Calendar Body */
+.calendarBody {
+  flex: 1;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  border-bottom: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+}
+
+.calendar-cell {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.day-cell {
+  border-top: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  font-weight: bold;
+}
+
+/* Day not in month */
+.filler-day {
+  /* background-color: var(--filler-bg); */
+  color: var(--filler-fg);
+}
+
+/* Day in month */
+.month-day {
+}
+
+.month-day:hover {
+  background-color: var(--hover);
+  cursor: pointer;
+}
+
+.selected-day {
+  background-color: var(--selected-day);
+}
+
+.selected-day:hover {
+  background-color: var(--selected-day);
+}
+
+.label-cell {
+  font-size: clamp(12px, 2.2vw, 18px);
+}
+
+.cell-indicator {
+  height: 10px;
+  width: 10px;
+  background-color: blueviolet;
+  border-radius: 10px;
+}
